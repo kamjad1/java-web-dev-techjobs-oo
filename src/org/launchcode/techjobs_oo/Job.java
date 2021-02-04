@@ -105,4 +105,42 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
+
+    public String toString(){
+
+        if((name.equals("")) && (employer.getValue() == null) && (location.getValue() == null) && (positionType.getValue() == null) && (coreCompetency.getValue() == null)){
+            return "OOPS! This job does not seem to exist";
+        }
+        if(name.equals("")){
+            this.name="Data not available";
+        }
+        if(employer.getValue() == null){
+            employer=new Employer("Data not available");
+            this.employer=employer;
+        }
+        if(location.getValue() == null){
+            location=new Location("Data not available");
+            this.location=location;
+        }
+        if(positionType.getValue() == null){
+            positionType=new PositionType("Data not available");
+            this.positionType=positionType;
+        }
+        if(coreCompetency.getValue() == null){
+            coreCompetency=new CoreCompetency("Data not available");
+            this.coreCompetency=coreCompetency;
+        }
+
+        return "\n" +
+                "ID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +
+                "\n";
+
+    }
 }
