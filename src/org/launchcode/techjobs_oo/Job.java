@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
+    private  int id;
     private static int nextId = 1;
 
 
@@ -20,23 +20,23 @@ public class Job {
     //  the 'id' field.
 
     public Job() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
     //Second Constructor
     public Job(
-            String aName,
-            Employer aEmployer,
-            Location aLocation,
-            PositionType aPositionType,
-            CoreCompetency aCoreCompetency) {
+            String name,
+            Employer employer,
+            Location location,
+            PositionType positionType,
+            CoreCompetency coreCompetency) {
         this();
-        this.name = aName;
-        this.employer = aEmployer;
-        this.location = aLocation;
-        this.positionType = aPositionType;
-        this.coreCompetency = aCoreCompetency;
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
 
     }
 
@@ -49,12 +49,12 @@ public class Job {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return getId() == job.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
 
@@ -116,7 +116,7 @@ public class Job {
         if(name.equals("")){
             this.name="Data not available";
         }
-        if(employer.getValue() == null){
+        if(employer.getValue() == ""){
             employer=new Employer("Data not available");
             this.employer=employer;
         }
@@ -129,8 +129,8 @@ public class Job {
             this.positionType=positionType;
         }
         if(coreCompetency.getValue() == null){
-            coreCompetency=new CoreCompetency("Data not available");
-            this.coreCompetency=coreCompetency;
+           coreCompetency=new CoreCompetency("Data not available");
+           this.coreCompetency=coreCompetency;
         }
 
         return "\n" +
