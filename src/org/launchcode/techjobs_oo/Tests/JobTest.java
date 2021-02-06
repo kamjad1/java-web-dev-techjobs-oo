@@ -67,8 +67,14 @@ public class JobTest {
 
     @Test
     public void testToStringForBlankLinesAtBeginningAndEnd(){
-      String text= testJob3.toString();
-      assertTrue(text.contains("\n"));
+
+     /*       String text= testJob3.toString();
+            assertTrue(text.contains("\n"));
+        }*/
+
+
+        assertTrue(testJob3.toString().startsWith("\n"));
+        assertTrue(testJob3.toString().endsWith("\n"));
     }
     @Test
     public void testLabelForEachField() {

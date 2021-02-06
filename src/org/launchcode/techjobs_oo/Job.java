@@ -118,19 +118,19 @@ public class Job {
         }
         if(employer.getValue() == ""){
             employer=new Employer("Data not available");
-            this.employer=employer;
+          //  this.employer=employer;
         }
         if(location.getValue() == null){
             location=new Location("Data not available");
-            this.location=location;
+           // this.location=location;
         }
         if(positionType.getValue() == null){
             positionType=new PositionType("Data not available");
-            this.positionType=positionType;
+           // this.positionType=positionType;
         }
         if(coreCompetency.getValue() == null){
            coreCompetency=new CoreCompetency("Data not available");
-           this.coreCompetency=coreCompetency;
+           //this.coreCompetency=coreCompetency;
         }
 
         return "\n" +
